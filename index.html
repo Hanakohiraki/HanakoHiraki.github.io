@@ -2,10 +2,117 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>ฮานาโกะ-ซัง Online แล้ว!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TWIPg - Rhythm Isekai Project</title>
+  <style>
+    :root {
+      --main-color: #3bb0ff;
+      --bg-color: #ffffff;
+      --font-color: #222222;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans Thai', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--font-color);
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--main-color);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background-color: #e6f5ff;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--main-color);
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(180deg, #e6f7ff, #ffffff);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      background-color: #f9fcff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #e6f5ff;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>TWIPg พร้อมรันแล้วค่ะ 💙</h1>
-  <p>เว็บนี้รันผ่าน GitHub Pages โดยตรง!</p>
+  <header>
+    <h1>TWIPg</h1>
+    <p>Rhythm Isekai Project - เสียงจากอีกโลกหนึ่ง</p>
+  </header>
+
+  <nav>
+    <a href="#about">เกี่ยวกับ</a>
+    <a href="#projects">โปรเจกต์</a>
+    <a href="#contact">ติดต่อ</a>
+  </nav>
+
+  <section class="hero">
+    <h1>ยินดีต้อนรับสู่โลกของ TWIPg</h1>
+    <p>รวมพลังเสียง ดนตรี อนิเมะ และจินตนาการให้เป็นหนึ่งเดียว</p>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="project-card">
+      <h2>Horse Girls Love is Not a Race!?</h2>
+      <p>นิยายยูริแนวแข่งขันสุดแหวกม่าน</p>
+    </div>
+    <div class="project-card">
+      <h2>Brick Layer</h2>
+      <p>ค่ายเพลงอินดี้กับเสียงใหม่แห่งจักรวาล</p>
+    </div>
+    <div class="project-card">
+      <h2>Vmover</h2>
+      <p>Vtuber แห่งโลก Isekai ที่พร้อมเคลื่อนไหวหัวใจคุณ</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 TWIPg. พัฒนาโดย Hanako Hiraki.</p>
+    <p><a href="https://github.com/Hanakohiraki" target="_blank">GitHub</a></p>
+  </footer>
 </body>
 </html>
