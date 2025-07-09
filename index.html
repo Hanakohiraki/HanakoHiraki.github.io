@@ -1,118 +1,92 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TWIPg - Rhythm Isekai Project</title>
-  <style>
-    :root {
-      --main-color: #3bb0ff;
-      --bg-color: #ffffff;
-      --font-color: #222222;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Noto Sans Thai', sans-serif;
-    }
-    body {
-      background-color: var(--bg-color);
-      color: var(--font-color);
-      line-height: 1.6;
-    }
-    header {
-      background-color: var(--main-color);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      background-color: #e6f5ff;
-      flex-wrap: wrap;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--main-color);
-      font-weight: bold;
-    }
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem;
-      background: linear-gradient(180deg, #e6f7ff, #ffffff);
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .project-card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-      background-color: #f9fcff;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: #e6f5ff;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWIPg - Rhythm Isekai Project</title>
+    
+    <!-- Import Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Import Google Fonts (Kanit) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to apply the Kanit font */
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>TWIPg</h1>
-    <p>Rhythm Isekai Project - เสียงจากอีกโลกหนึ่ง</p>
-  </header>
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-  <nav>
-    <a href="#about">เกี่ยวกับ</a>
-    <a href="#projects">โปรเจกต์</a>
-    <a href="#contact">ติดต่อ</a>
-  </nav>
+    <!-- Header -->
+    <header class="bg-blue-500 text-white shadow-md">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold">TWIPg</h1>
+            <p class="text-lg text-blue-100 mt-1">Rhythm Isekai Project - เสียงจากอีกโลกหนึ่ง</p>
+        </div>
+    </header>
 
-  <section class="hero">
-    <h1>ยินดีต้อนรับสู่โลกของ TWIPg</h1>
-    <p>รวมพลังเสียง ดนตรี อนิเมะ และจินตนาการให้เป็นหนึ่งเดียว</p>
-  </section>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-6 py-3 flex justify-center items-center gap-6 md:gap-8">
+            <a href="#about" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300">เกี่ยวกับ</a>
+            <a href="#projects" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300">โปรเจกต์</a>
+            <a href="#contact" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300">ติดต่อ</a>
+        </div>
+    </nav>
 
-  <section class="projects" id="projects">
-    <div class="project-card">
-      <h2>Horse Girls Love is Not a Race!?</h2>
-      <p>นิยายยูริแนวแข่งขันสุดแหวกม่าน</p>
-    </div>
-    <div class="project-card">
-      <h2>Brick Layer</h2>
-      <p>ค่ายเพลงอินดี้กับเสียงใหม่แห่งจักรวาล</p>
-    </div>
-    <div class="project-card">
-      <h2>Vmover</h2>
-      <p>Vtuber แห่งโลก Isekai ที่พร้อมเคลื่อนไหวหัวใจคุณ</p>
-    </div>
-  </section>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8 md:py-16">
 
-  <footer id="contact">
-    <p>&copy; 2025 TWIPg. พัฒนาโดย Hanako Hiraki.</p>
-    <p><a href="https://github.com/Hanakohiraki" target="_blank">GitHub</a></p>
-  </footer>
+        <!-- Hero Section -->
+        <section id="about" class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-600 mb-4">ยินดีต้อนรับสู่โลกของ TWIPg</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">รวมพลังเสียง ดนตรี อนิเมะ และจินตนาการให้เป็นหนึ่งเดียว</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mt-16 md:mt-24">
+            <h2 class="text-3xl font-bold text-center mb-10">โปรเจกต์ของเรา</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">Horse Girls Love is Not a Race!?</h3>
+                    <p class="text-gray-600">นิยายยูริแนวแข่งขันสุดแหวกม่าน</p>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">Brick Layer</h3>
+                    <p class="text-gray-600">ค่ายเพลงอินดี้กับเสียงใหม่แห่งจักรวาล</p>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">Vmover</h3>
+                    <p class="text-gray-600">Vtuber แห่งโลก Isekai ที่พร้อมเคลื่อนไหวหัวใจคุณ</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-gray-300 mt-16 md:mt-24">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 TWIPg. พัฒนาโดย Hanako Hiraki.</p>
+            <p class="mt-2">
+                <a href="https://github.com/Hanakohiraki" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors duration-300">
+                    GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
