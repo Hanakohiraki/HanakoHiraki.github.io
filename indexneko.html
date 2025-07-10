@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWIPg - เหมียว เหมียว โปรเจกต์</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Kanit', 'Noto Sans SC', 'Noto Sans JP', sans-serif; }
+        .form-input { transition: all 0.3s ease-in-out; }
+        .dropdown-menu {
+            transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header with Language Switcher -->
+    <header class="bg-blue-500 text-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <div class="w-1/4"></div>
+            <div class="w-1/2 py-4 text-center">
+                <h1 class="text-3xl sm:text-4xl font-bold">TWIPg</h1>
+                <p class="text-md sm:text-lg text-blue-100 mt-1">เหมียว เหมียว โปรเจกต์</p>
+            </div>
+            <div class="w-1/4 flex justify-end">
+                <div class="relative" id="language-switcher">
+                    <button id="language-button" type="button" class="inline-flex items-center justify-center w-full rounded-md border border-transparent px-3 py-2 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 01-9-9m9-9a9 9 0 00-9 9" />
+                        </svg>
+                        <span class="hidden sm:inline">เหมียว</span>
+                    </button>
+                    <div id="language-menu" class="dropdown-menu origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden transform opacity-0 scale-95" role="menu" aria-orientation="vertical" aria-labelledby="language-button">
+                        <div class="py-1" role="none">
+                            <a href="index.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">เหมียว (ไทย)</a>
+                            <a href="indexen.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Meow (English)</a>
+                            <a href="indexjp.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">ニャー (日本語)</a>
+                            <a href="indexch.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">喵 (中文)</a>
+                            <a href="indexneko.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">เหมียว 🐾</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-20">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-center items-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
+            <a href="indexneko.html" class="text-blue-600 font-bold transition-colors duration-300 text-sm sm:text-base">เหมียว</a>
+            <a href="aboutneko.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">เกี่ยวกับเหมียว</a>
+            <a href="#team" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">ฝูงแมว</a>
+            <a href="#contact" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">เรียกเหมียว</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 py-8 md:py-12">
+        <section id="about" class="text-center my-12 md:my-16">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-4">ยินดีต้อนรับสู่โลกของเหมียว</h1>
+            <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">รวมพลังเหมียว, เหมียว, เหมียว, และเหมียวให้เป็นหนึ่งเดียว</p>
+        </section>
+
+        <section id="projects" class="my-12 md:my-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10">โปรเจกต์ของเหมียว</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">เหมียวๆ รักกัน ไม่ใช่การวิ่งแข่ง!?</h3>
+                    <p class="text-gray-600">เหมียว เหมียว เหมียว แง้วๆ</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">ช่างก่อเหมียว</h3>
+                    <p class="text-gray-600">เหมียวๆๆๆๆ ค่ายแมวอินดี้</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">Vmeower</h3>
+                    <p class="text-gray-600">Vtuber แมวจากต่างโลกพร้อมขยับหัวใจคุณ</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="my-12 md:my-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12">ฝูงแมวของเรา</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+                    <img class="w-28 h-28 sm:w-32 sm:h-32 rounded-full mx-auto mb-4 object-cover ring-4 ring-blue-200" src="https://i.postimg.cc/DyFV0V26/68-7-09-08-08-43-35.png" alt="รูปแมว Hanako">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800">ฮานาโกะ เหมียวคิ</h3>
+                    <p class="text-blue-600 font-medium">หัวหน้าแมว & แมวโปรแกรมเมอร์</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+                    <img class="w-28 h-28 sm:w-32 sm:h-32 rounded-full mx-auto mb-4 object-cover ring-4 ring-blue-200" src="https://placehold.co/128x128/90cdf4/ffffff?text=Y" alt="รูปแมว Yuki">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800">ยูกิ เหมียวนามิ</h3>
+                    <p class="text-blue-600 font-medium">แมวคิดคอนเซ็ปต์ & แมวโปรดิวเซอร์</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+                    <img class="w-28 h-28 sm:w-32 sm:h-32 rounded-full mx-auto mb-4 object-cover ring-4 ring-blue-200" src="https://placehold.co/128x128/f56565/ffffff?text=N/A" alt="รูปแมวลึกลับ">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800">เหมียว=N/A</h3>
+                    <p class="text-blue-600 font-medium">N/A</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="my-12 md:my-16">
+            <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-12 lg:p-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">เรียกเหมียว</h2>
+                <p class="text-center text-gray-600 mb-10 sm:mb-12 max-w-2xl mx-auto">มีคำถาม, อยากให้ขนม, หรือสนใจมาคลอเคลียกับเรา? กรอกฟอร์มข้างล่างเลยเมี๊ยว</p>
+                <div class="grid md:grid-cols-2 gap-10 md:gap-12">
+                    <form action="#" method="POST">
+                        <div class="space-y-5">
+                            <div><label for="name" class="block text-base sm:text-lg font-medium text-gray-700">ชื่อทาส</label><input type="text" id="name" name="name" class="form-input mt-2 block w-full rounded-lg border-gray-300 bg-gray-100 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" required></div>
+                            <div><label for="email" class="block text-base sm:text-lg font-medium text-gray-700">ที่อยู่ส่งปลาทู</label><input type="email" id="email" name="email" class="form-input mt-2 block w-full rounded-lg border-gray-300 bg-gray-100 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" required></div>
+                            <div><label for="message" class="block text-base sm:text-lg font-medium text-gray-700">ข้อความถึงเหมียว</label><textarea id="message" name="message" rows="5" class="form-input mt-2 block w-full rounded-lg border-gray-300 bg-gray-100 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" required></textarea></div>
+                            <div><button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105">ส่งเสียงเรียกเหมียว</button></div>
+                        </div>
+                    </form>
+                    <div class="space-y-8 mt-8 md:mt-0">
+                        <!-- Contact Info -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400">
+        <div class="container mx-auto px-4 sm:px-6 py-6 text-center">
+            <p class="text-sm">&copy; 2025 TWIPg. สงวนสิทธิ์โดยแมว. พัฒนาโดย Hanako Hiraki.</p>
+            <p class="mt-2 text-xs sm:text-sm"><a href="https://github.com/Hanakohiraki" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors duration-300">ซอร์สโค้ดบนกรงเล็บแมว</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Language Switcher -->
+    <script>
+        const langButton = document.getElementById('language-button');
+        const langMenu = document.getElementById('language-menu');
+
+        const toggleMenu = () => {
+            const isHidden = langMenu.classList.contains('hidden');
+            if (isHidden) {
+                langMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    langMenu.classList.remove('opacity-0', 'scale-95');
+                }, 10);
+            } else {
+                langMenu.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    langMenu.classList.add('hidden');
+                }, 200);
+            }
+        };
+
+        langButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        window.addEventListener('click', (event) => {
+            if (!langMenu.classList.contains('hidden') && !langButton.contains(event.target)) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html>
 
