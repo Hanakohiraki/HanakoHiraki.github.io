@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TWIPg</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header -->
+    <header class="bg-blue-500 text-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 py-4 text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold">TWIPg</h1>
+            <p class="text-md sm:text-lg text-blue-100 mt-1">Rhythm Isekai Project</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-center items-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
+            <!-- Update links to point to different pages -->
+            <a href="index.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">Home</a>
+            <a href="about.html" class="text-blue-600 font-bold transition-colors duration-300 text-sm sm:text-base">About Us</a>
+            <a href="team.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">Team</a>
+            <a href="index.html#contact" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">Contact Us</a>
+            <a href="careers.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">Careers</a>
+        </div>
+    </nav>
+
+    <!-- Main Content for About Page -->
+    <main class="container mx-auto px-4 sm:px-6 py-12 md:py-16">
+
+        <!-- About Us Section -->
+        <section id="about-us">
+            <div class="text-center mb-12 md:mb-16">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-4">The Story Behind TWIPg</h1>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">The beginning of limitless imagination</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <!-- Image Section -->
+                    <div class="relative">
+                        <img src="https://placehold.co/600x800/63b3ed/ffffff?text=TWIPg+World" alt="Concept art for the TWIPg project" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:bg-gradient-to-r"></div>
+                    </div>
+
+                    <!-- Text Content Section -->
+                    <div class="p-8 md:p-12 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Our Mission</h2>
+                            <p class="text-gray-700 leading-relaxed">
+                                At TWIPg (The World Impact group), we believe that everyone has their own world of imagination. Our mission is to build a bridge between the real world and those worlds through a mix of media including music, stories, animation, and Virtual World technology to deliver new and memorable experiences.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Our Journey</h2>
+                            <p class="text-gray-700 leading-relaxed">
+                                This project was born from a group of friends who are passionate about Japanese pop culture and Isekai (another world) stories. We started by composing music and writing short stories to share within our small group, until our dream grew into a determination to make the "Rhythm Isekai" universe a reality.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Our Philosophy</h2>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><span class="font-semibold">Creativity First:</span> Creativity is the heart of our work.</li>
+                                <li><span class="font-semibold">Community Driven:</span> The voice of everyone in the community is our driving force.</li>
+                                <li><span class="font-semibold">Borderless Imagination:</span> We believe imagination has no boundaries.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 mt-12 md:mt-16">
+        <div class="container mx-auto px-4 sm:px-6 py-6 text-center">
+            <p class="text-sm">&copy; 2025 TWIPg. All Rights Reserved. Developed by Hanako Hiraki.</p>
+            <p class="mt-2 text-xs sm:text-sm">
+                <a href="https://github.com/Hanakohiraki" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors duration-300">
+                    Source Code on GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
