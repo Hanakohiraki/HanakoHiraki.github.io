@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทีมงานของเรา - TWIPg</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Kanit', sans-serif; }
+        .dropdown-menu {
+            transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased">
+
+    <!-- Header -->
+    <header class="bg-blue-500 text-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <div class="w-1/4"></div>
+            <div class="w-1/2 py-4 text-center">
+                <h1 class="text-3xl sm:text-4xl font-bold">TWIPg</h1>
+                <p class="text-md sm:text-lg text-blue-100 mt-1">Rhythm Isekai Project</p>
+            </div>
+            <div class="w-1/4 flex justify-end">
+                <!-- Language switcher can be added back here if needed -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-20">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-center items-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
+            <a href="index.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">หน้าหลัก</a>
+            <a href="about.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">เกี่ยวกับเรา</a>
+            <a href="team.html" class="text-blue-600 font-bold transition-colors duration-300 text-sm sm:text-base">ทีมงาน</a>
+            <a href="index.html#contact" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div class="text-center mb-12 md:mb-16">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-4">ทีมงานผู้อยู่เบื้องหลัง</h1>
+            <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">กลุ่มคนผู้มีความฝันและจินตนาการเดียวกัน</p>
+        </div>
+
+        <!-- Department Sections -->
+        <div class="space-y-16">
+
+            <!-- Section: Management & Production -->
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold border-l-4 border-blue-500 pl-4 mb-8">ฝ่ายบริหารและโปรดิวเซอร์</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Team Member Card Template -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover ring-4 ring-blue-200" src="https://placehold.co/128x128/a0aec0/ffffff?text=ใส่รูป" alt="รูปของทีมงาน">
+                        <h3 class="text-xl font-semibold text-gray-800">[ชื่อ-นามสกุล]</h3>
+                        <p class="text-blue-600 font-medium">[ตำแหน่ง]</p>
+                        <p class="text-sm text-gray-500 mt-2">[คำอธิบายสั้นๆ]</p>
+                    </div>
+                    <!-- Add more members here by copying the card above -->
+                </div>
+            </div>
+
+            <!-- Section: Art & Design -->
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold border-l-4 border-green-500 pl-4 mb-8">ฝ่ายศิลป์และออกแบบ</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Team Member Card Template -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover ring-4 ring-green-200" src="https://placehold.co/128x128/a0aec0/ffffff?text=ใส่รูป" alt="รูปของทีมงาน">
+                        <h3 class="text-xl font-semibold text-gray-800">[ชื่อ-นามสกุล]</h3>
+                        <p class="text-green-600 font-medium">[ตำแหน่ง]</p>
+                        <p class="text-sm text-gray-500 mt-2">[คำอธิบายสั้นๆ]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: Music & Sound -->
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold border-l-4 border-purple-500 pl-4 mb-8">ฝ่ายดนตรีและเสียง</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Team Member Card Template -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover ring-4 ring-purple-200" src="https://placehold.co/128x128/a0aec0/ffffff?text=ใส่รูป" alt="รูปของทีมงาน">
+                        <h3 class="text-xl font-semibold text-gray-800">[ชื่อ-นามสกุล]</h3>
+                        <p class="text-purple-600 font-medium">[ตำแหน่ง]</p>
+                        <p class="text-sm text-gray-500 mt-2">[คำอธิบายสั้นๆ]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: Development & Tech -->
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold border-l-4 border-red-500 pl-4 mb-8">ฝ่ายพัฒนาและเทคนิค</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Team Member Card Template -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover ring-4 ring-red-200" src="https://placehold.co/128x128/a0aec0/ffffff?text=ใส่รูป" alt="รูปของทีมงาน">
+                        <h3 class="text-xl font-semibold text-gray-800">[ชื่อ-นามสกุล]</h3>
+                        <p class="text-red-600 font-medium">[ตำแหน่ง]</p>
+                        <p class="text-sm text-gray-500 mt-2">[คำอธิบายสั้นๆ]</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 mt-12 md:mt-16">
+        <div class="container mx-auto px-4 sm:px-6 py-6 text-center">
+            <p class="text-sm">&copy; 2025 TWIPg. All Rights Reserved. พัฒนาโดย Hanako Hiraki.</p>
+            <p class="mt-2 text-xs sm:text-sm"><a href="https://github.com/Hanakohiraki" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors duration-300">Source Code on GitHub</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
