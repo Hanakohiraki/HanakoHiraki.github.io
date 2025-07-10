@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สมัครงาน - TWIPg</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Kanit', sans-serif; }
+        .form-input { transition: all 0.3s ease-in-out; }
+        .dropdown-menu {
+            transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <header class="bg-blue-500 text-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <div class="w-1/4"></div>
+            <div class="w-1/2 py-4 text-center">
+                <h1 class="text-3xl sm:text-4xl font-bold">TWIPg</h1>
+                <p class="text-md sm:text-lg text-blue-100 mt-1">Rhythm Isekai Project</p>
+            </div>
+            <div class="w-1/4 flex justify-end">
+                </div>
+        </div>
+    </header>
+
+    <nav class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-20">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-center items-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
+            <a href="index.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">หน้าหลัก</a>
+            <a href="about.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">เกี่ยวกับเรา</a>
+            <a href="team.html" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">ทีมงาน</a>
+            <a href="careers.html" class="text-blue-600 font-bold transition-colors duration-300 text-sm sm:text-base">สมัครงาน</a>
+            <a href="#contact" class="text-gray-600 hover:text-blue-500 font-medium transition-colors duration-300 text-sm sm:text-base">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 sm:px-6 py-8 md:py-12">
+        
+        <section id="careers-header" class="text-center my-12 md:my-16">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-4">ร่วมงานกับเรา 🤝</h1>
+            <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">เรากำลังมองหาผู้มีพรสวรรค์และความหลงใหลในเสียงดนตรี อนิเมะ และจินตนาการ มาร่วมสร้างสรรค์โปรเจกต์ที่น่าตื่นเต้นไปด้วยกัน</p>
+        </section>
+
+        <section id="job-listings" class="my-12 md:my-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12">ตำแหน่งงานที่เปิดรับ</h2>
+            <div class="space-y-8 max-w-4xl mx-auto">
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 transition-shadow duration-300 hover:shadow-xl border border-transparent hover:border-blue-300">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-3">
+                        <h3 class="text-xl sm:text-2xl font-semibold text-blue-700">นักวาดภาพประกอบ (Illustrator)</h3>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium mt-2 sm:mt-0 px-3 py-1 rounded-full">Freelance / Full-time</span>
+                    </div>
+                    <p class="text-gray-600 mb-5">รับผิดชอบการออกแบบและวาดภาพตัวละคร, พื้นหลัง, และภาพประกอบต่างๆ สำหรับโปรเจกต์นิยายและเกมของเรา</p>
+                    <h4 class="font-semibold text-gray-800 mb-2">คุณสมบัติที่มองหา:</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-6">
+                        <li>มีทักษะการวาดสไตล์อนิเมะ/มังงะ และเข้าใจในองค์ประกอบศิลป์</li>
+                        <li>สามารถใช้โปรแกรมวาดภาพดิจิทัลได้อย่างคล่องแคล่ว (เช่น Clip Studio Paint, Photoshop)</li>
+                        <li>มีความคิดสร้างสรรค์ สามารถทำงานเป็นทีม และส่งงานตรงเวลา</li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105">สมัครตำแหน่งนี้</a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 transition-shadow duration-300 hover:shadow-xl border border-transparent hover:border-blue-300">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-3">
+                        <h3 class="text-xl sm:text-2xl font-semibold text-blue-700">นักแต่งเพลง (Music Composer)</h3>
+                        <span class="bg-green-100 text-green-800 text-sm font-medium mt-2 sm:mt-0 px-3 py-1 rounded-full">Project-based</span>
+                    </div>
+                    <p class="text-gray-600 mb-5">สร้างสรรค์และเรียบเรียงดนตรีประกอบสำหรับโปรเจกต์ต่างๆ ของเรา ตั้งแต่เพลงประกอบฉากไปจนถึงเพลงร้องประจำตัวละคร</p>
+                    <h4 class="font-semibold text-gray-800 mb-2">คุณสมบัติที่มองหา:</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-6">
+                        <li>มีความสามารถในการแต่งเพลงหลากหลายแนว โดยเฉพาะแนว J-Pop, Anisong, และ BGM</li>
+                        <li>สามารถใช้โปรแกรมทำเพลง (DAW) ได้เป็นอย่างดี และมีพื้นฐานด้านทฤษฎีดนตรี</li>
+                        <li>มีแฟ้มผลงาน (Portfolio) ที่น่าสนใจเพื่อประกอบการพิจารณา</li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105">สมัครตำแหน่งนี้</a>
+                </div>
+
+                <div class="bg-gray-100 rounded-xl border border-dashed border-gray-300 p-8 text-center">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">ยังไม่มีตำแหน่งงานที่ตรงกับคุณ?</h3>
+                    <p class="text-gray-600 mb-4">เราเปิดรับผู้มีความสามารถเสมอ! หากคุณมีทักษะอื่นๆ ที่น่าสนใจและอยากร่วมงานกับเรา สามารถส่งประวัติและผลงานของคุณมาให้เราพิจารณาได้เลย</p>
+                    <a href="#contact" class="inline-block bg-gray-500 text-white font-bold py-2 px-5 rounded-lg hover:bg-gray-600 transition-colors">ส่งโปรไฟล์ของคุณ</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="my-12 md:my-16">
+            <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-12 lg:p-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">ติดต่อเพื่อสมัครงาน</h2>
+                <p class="text-center text-gray-600 mb-10 sm:mb-12 max-w-2xl mx-auto">กรุณากรอกข้อมูลในฟอร์มด้านล่าง และอย่าลืมแนบลิงก์ผลงาน (Portfolio) ของคุณในช่องข้อความ เพื่อให้เราได้รู้จักคุณมากขึ้น</p>
+                <form action="#" method="POST">
+                    <div class="space-y-5 max-w-2xl mx-auto">
+                        <div><label for="name" class="block text-base sm:text-lg font-medium text-gray-700">ชื่อ-นามสกุล</label><input type="text" id="name" name="name" class="form-input mt-2 block w-full rounded-lg border-gray-300 bg-gray-100 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" required></div>
+                        <div><label for="email" class="block text-base sm:text-lg font-medium text-gray-700">อีเมลสำหรับติดต่อกลับ</label><input type="email" id="email" name="email" class="form-input mt-2 block w-full rounded-lg border-gray-300 bg-gray-100 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" required></div>
+                        <div><label for="message" class="block text-base sm:text-lg font-medium text-gray-700">แนะนำตัวและลิงก์ผลงาน (Portfolio)</label><textarea id="message" name="message" rows="6" class="form-input mt-2 block w-full rounded-lg border-gray-300 bg-gray-100 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" placeholder="เช่น แนะนำตัวสั้นๆ, ตำแหน่งที่สนใจ, ลิงก์ Google Drive, ArtStation, SoundCloud, GitHub, ฯลฯ" required></textarea></div>
+                        <div><button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105">ส่งใบสมัคร</button></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400">
+        <div class="container mx-auto px-4 sm:px-6 py-6 text-center">
+            <p class="text-sm">&copy; 2025 TWIPg. All Rights Reserved. พัฒนาโดย Hanako Hiraki.</p>
+            <p class="mt-2 text-xs sm:text-sm"><a href="https://github.com/Hanakohiraki" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors duration-300">Source Code on GitHub</a></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
 
