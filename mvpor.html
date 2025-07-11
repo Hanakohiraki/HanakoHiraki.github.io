@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>จองตั๋วหนัง - Major Gemini</title>
+    <title>EchoXperience - Your Private Cinema</title>
     <style>
         /* CSS for styling the webpage */
         @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
 
         :root {
-            --primary-color: #d90429;
-            --secondary-color: #2b2d42;
-            --background-color: #edf2f4;
-            --text-color: #1a1a1a;
-            --light-gray: #8d99ae;
+            --primary-color: #e50914; /* Netflix Red for high visibility */
+            --secondary-color: #141414; /* Rich Black */
+            --background-color: #000000; /* Pure Black */
+            --text-color: #f5f5f5; /* Off-white for easy reading */
+            --text-muted: #808080; /* Gray for secondary text */
         }
 
         body {
@@ -21,6 +21,7 @@
             margin: 0;
             background-color: var(--background-color);
             color: var(--text-color);
+            background: radial-gradient(circle, var(--secondary-color) 0%, var(--background-color) 100%);
         }
 
         .container {
@@ -31,20 +32,24 @@
 
         /* --- Header --- */
         .main-header {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 15px 30px;
+            background-color: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
-            font-size: 1.8em;
+            font-size: 2em;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-color);
             text-decoration: none;
+            letter-spacing: -1px;
         }
 
         .logo span {
@@ -52,83 +57,40 @@
         }
 
         .main-nav a {
-            color: #fff;
+            color: var(--text-muted);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
             font-size: 1.1em;
+            font-weight: 700;
             transition: color 0.3s;
         }
 
-        .main-nav a:hover {
-            color: var(--primary-color);
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--text-color);
         }
 
-        /* --- Movie Showcase --- */
+        /* --- Section Title --- */
         .section-title {
             font-size: 2.2em;
             font-weight: 700;
-            margin-bottom: 25px;
-            color: var(--secondary-color);
+            margin-bottom: 30px;
+            margin-top: 40px;
+            color: var(--text-color);
             border-left: 5px solid var(--primary-color);
             padding-left: 15px;
         }
 
-        .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 30px;
-        }
-
-        .movie-card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .movie-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-
-        .movie-poster img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .movie-info {
-            padding: 15px;
-        }
-
-        .movie-title {
-            font-size: 1.2em;
-            font-weight: 700;
-            margin: 0 0 10px 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .movie-details {
-            font-size: 0.9em;
-            color: var(--light-gray);
-        }
-
-        /* --- Booking Section --- */
-        .booking-section {
-            background-color: #fff;
+        /* --- Experience Selector --- */
+        .experience-section {
+            background-color: var(--secondary-color);
             padding: 30px;
-            margin-top: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #222;
         }
 
-        .booking-form {
+        .experience-form {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr auto;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             align-items: end;
         }
@@ -139,127 +101,205 @@
         }
 
         .form-group label {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 700;
             font-size: 0.9em;
-            color: var(--secondary-color);
+            color: var(--text-muted);
         }
 
         .form-group select, .form-group input {
-            padding: 12px;
+            padding: 14px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #333;
+            background-color: #2a2a2a;
+            color: var(--text-color);
             font-family: 'Sarabun', sans-serif;
             font-size: 1em;
         }
 
-        .btn-book {
+        .btn-access {
             background-color: var(--primary-color);
             color: #fff;
-            padding: 12px 30px;
+            padding: 14px 30px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1.1em;
             font-weight: 700;
-            transition: background-color 0.3s;
-            height: 48px; /* Align with form inputs */
+            transition: transform 0.2s, background-color 0.3s;
+            width: 100%;
         }
 
-        .btn-book:hover {
-            background-color: #a3031e;
+        .btn-access:hover {
+            background-color: #f40612;
+            transform: scale(1.05);
+        }
+        
+        /* --- Movie Grid --- */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .movie-card {
+            background: var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+        }
+
+        .movie-poster {
+            position: relative;
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .status-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .status-tag.now-showing {
+            background-color: var(--primary-color);
+        }
+        .status-tag.coming-soon {
+            background-color: var(--text-muted);
+        }
+
+        .movie-info {
+            padding: 20px;
+        }
+
+        .movie-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-details {
+            font-size: 0.9em;
+            color: var(--text-muted);
         }
 
         /* --- Footer --- */
         .main-footer {
-            background-color: var(--secondary-color);
-            color: #fff;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
             margin-top: 50px;
+            border-top: 1px solid #222;
         }
     </style>
 </head>
 <body>
 
     <header class="main-header">
-        <a href="#" class="logo">Major <span>Gemini</span></a>
+        <a href="#" class="logo">Echo<span>X</span>perience</a>
         <nav class="main-nav">
-            <a href="#">หน้าแรก</a>
+            <a href="#" class="active">หน้าแรก</a>
             <a href="#">ภาพยนตร์</a>
-            <a href="#">โรงภาพยนตร์</a>
-            <a href="#">โปรโมชั่น</a>
-            <a href="#">เข้าสู่ระบบ</a>
+            <a href="#">แพ็กเกจ</a>
+            <a href="#">ติดต่อเรา</a>
         </nav>
     </header>
 
     <main class="container">
-        <section class="booking-section">
-            <h2 class="section-title">จองตั๋วหนังอย่างรวดเร็ว</h2>
-            <form class="booking-form">
+        <section class="experience-section">
+            <form class="experience-form">
                 <div class="form-group">
                     <label for="movie-select">เลือกภาพยนตร์</label>
                     <select id="movie-select">
-                        <option>Furiosa: A Mad Max Saga</option>
-                        <option>The Garfield Movie</option>
-                        <option>Kingdom of the Planet of the Apes</option>
-                        <option>หลานม่า (How to Make Millions Before Grandma Dies)</option>
+                        <option>Dune: Part Two</option>
+                        <option>Oppenheimer</option>
+                        <option>Godzilla x Kong: The New Empire</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="cinema-select">เลือกโรงภาพยนตร์</label>
-                    <select id="cinema-select">
-                        <option>พารากอน ซีนีเพล็กซ์</option>
-                        <option>เมกา ซีนีเพล็กซ์</option>
-                        <option>ไอคอน ซีเนคอนิค</option>
-                        <option>เมเจอร์ ซีนีเพล็กซ์ รัชโยธิน</option>
+                    <label for="format-select">เลือกรูปแบบการรับชม</label>
+                    <select id="format-select">
+                        <option>รับชมออนไลน์ (Streaming)</option>
+                        <option>ไพรเวทโฮมเธียเตอร์ (บางกะปิ)</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="date-select">เลือกรอบฉาย</label>
+                    <label for="date-select">เลือกวันที่</label>
                     <input type="date" id="date-select" value="2025-07-12">
                 </div>
-                <button type="submit" class="btn-book">เช็ครอบ & จอง</button>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button type="submit" class="btn-access">รับสิทธิ์เข้าชม</button>
+                </div>
             </form>
         </section>
 
         <section class="movie-showcase">
-            <h2 class="section-title">ภาพยนตร์ที่กำลังฉาย</h2>
+            <h2 class="section-title">กำลังฉาย (Now Showing)</h2>
             <div class="movie-grid">
                 <div class="movie-card">
                     <div class="movie-poster">
-                        <img src="https://via.placeholder.com/300x450/2b2d42/ffffff?text=Furiosa" alt="Furiosa Poster">
+                        <img src="https://placehold.co/400x600/e50914/f5f5f5?text=DUNE\nPART+TWO" alt="Dune Poster">
+                        <div class="status-tag now-showing">Now Showing</div>
                     </div>
                     <div class="movie-info">
-                        <h3 class="movie-title">Furiosa: A Mad Max Saga</h3>
-                        <p class="movie-details">แอ็คชัน / ผจญภัย</p>
+                        <h3 class="movie-title">Dune: Part Two</h3>
+                        <p class="movie-details">ไซไฟ / ผจญภัย</p>
                     </div>
                 </div>
                 <div class="movie-card">
                     <div class="movie-poster">
-                        <img src="https://via.placeholder.com/300x450/d90429/ffffff?text=Garfield" alt="Garfield Poster">
+                        <img src="https://placehold.co/400x600/141414/f5f5f5?text=OPPENHEIMER" alt="Oppenheimer Poster">
+                        <div class="status-tag now-showing">Now Showing</div>
                     </div>
                     <div class="movie-info">
-                        <h3 class="movie-title">The Garfield Movie</h3>
-                        <p class="movie-details">แอนิเมชัน / ตลก</p>
+                        <h3 class="movie-title">Oppenheimer</h3>
+                        <p class="movie-details">ชีวประวัติ / ดราม่า</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-showcase">
+            <h2 class="section-title">เร็วๆ นี้ (Coming Soon)</h2>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/400x600/808080/000000?text=JOKER\nFOLIE+A+DEUX" alt="Joker 2 Poster">
+                        <div class="status-tag coming-soon">Coming Soon</div>
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">Joker: Folie à Deux</h3>
+                        <p class="movie-details">เพลง / อาชญากรรม / ดราม่า</p>
                     </div>
                 </div>
                 <div class="movie-card">
                     <div class="movie-poster">
-                        <img src="https://via.placeholder.com/300x450/8d99ae/ffffff?text=Planet+Apes" alt="Planet of the Apes Poster">
+                        <img src="https://placehold.co/400x600/808080/000000?text=GLADIATOR+II" alt="Gladiator 2 Poster">
+                        <div class="status-tag coming-soon">Coming Soon</div>
                     </div>
                     <div class="movie-info">
-                        <h3 class="movie-title">Kingdom of the Planet of the Apes</h3>
-                        <p class="movie-details">ไซไฟ / แอ็คชัน</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="https://via.placeholder.com/300x450/2b2d42/ffffff?text=หลานม่า" alt="หลานม่า Poster">
-                    </div>
-                    <div class="movie-info">
-                        <h3 class="movie-title">หลานม่า</h3>
-                        <p class="movie-details">ดราม่า / ครอบครัว</p>
+                        <h3 class="movie-title">Gladiator II</h3>
+                        <p class="movie-details">แอ็คชัน / ดราม่า</p>
                     </div>
                 </div>
             </div>
@@ -268,7 +308,7 @@
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2025 Major Gemini. สงวนลิขสิทธิ์.</p>
+        <p>&copy; 2025 EchoXperience. Your Private Cinema Experience.</p>
     </footer>
 
 </body>
