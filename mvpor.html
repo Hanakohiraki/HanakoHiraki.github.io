@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จองตั๋วหนัง - Major Gemini</title>
+    <style>
+        /* CSS for styling the webpage */
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #d90429;
+            --secondary-color: #2b2d42;
+            --background-color: #edf2f4;
+            --text-color: #1a1a1a;
+            --light-gray: #8d99ae;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        .main-header {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .main-nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Movie Showcase --- */
+        .section-title {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .movie-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .movie-info {
+            padding: 15px;
+        }
+
+        .movie-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-details {
+            font-size: 0.9em;
+            color: var(--light-gray);
+        }
+
+        /* --- Booking Section --- */
+        .booking-section {
+            background-color: #fff;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 20px;
+            align-items: end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 0.9em;
+            color: var(--secondary-color);
+        }
+
+        .form-group select, .form-group input {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1em;
+        }
+
+        .btn-book {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            height: 48px; /* Align with form inputs */
+        }
+
+        .btn-book:hover {
+            background-color: #a3031e;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="#" class="logo">Major <span>Gemini</span></a>
+        <nav class="main-nav">
+            <a href="#">หน้าแรก</a>
+            <a href="#">ภาพยนตร์</a>
+            <a href="#">โรงภาพยนตร์</a>
+            <a href="#">โปรโมชั่น</a>
+            <a href="#">เข้าสู่ระบบ</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="booking-section">
+            <h2 class="section-title">จองตั๋วหนังอย่างรวดเร็ว</h2>
+            <form class="booking-form">
+                <div class="form-group">
+                    <label for="movie-select">เลือกภาพยนตร์</label>
+                    <select id="movie-select">
+                        <option>Furiosa: A Mad Max Saga</option>
+                        <option>The Garfield Movie</option>
+                        <option>Kingdom of the Planet of the Apes</option>
+                        <option>หลานม่า (How to Make Millions Before Grandma Dies)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cinema-select">เลือกโรงภาพยนตร์</label>
+                    <select id="cinema-select">
+                        <option>พารากอน ซีนีเพล็กซ์</option>
+                        <option>เมกา ซีนีเพล็กซ์</option>
+                        <option>ไอคอน ซีเนคอนิค</option>
+                        <option>เมเจอร์ ซีนีเพล็กซ์ รัชโยธิน</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date-select">เลือกรอบฉาย</label>
+                    <input type="date" id="date-select" value="2025-07-12">
+                </div>
+                <button type="submit" class="btn-book">เช็ครอบ & จอง</button>
+            </form>
+        </section>
+
+        <section class="movie-showcase">
+            <h2 class="section-title">ภาพยนตร์ที่กำลังฉาย</h2>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://via.placeholder.com/300x450/2b2d42/ffffff?text=Furiosa" alt="Furiosa Poster">
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">Furiosa: A Mad Max Saga</h3>
+                        <p class="movie-details">แอ็คชัน / ผจญภัย</p>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://via.placeholder.com/300x450/d90429/ffffff?text=Garfield" alt="Garfield Poster">
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">The Garfield Movie</h3>
+                        <p class="movie-details">แอนิเมชัน / ตลก</p>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://via.placeholder.com/300x450/8d99ae/ffffff?text=Planet+Apes" alt="Planet of the Apes Poster">
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">Kingdom of the Planet of the Apes</h3>
+                        <p class="movie-details">ไซไฟ / แอ็คชัน</p>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://via.placeholder.com/300x450/2b2d42/ffffff?text=หลานม่า" alt="หลานม่า Poster">
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">หลานม่า</h3>
+                        <p class="movie-details">ดราม่า / ครอบครัว</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Major Gemini. สงวนลิขสิทธิ์.</p>
+    </footer>
+
+</body>
+</html>
 
