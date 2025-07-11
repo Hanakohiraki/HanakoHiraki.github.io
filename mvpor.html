@@ -259,7 +259,7 @@
             height: 0;
             background: #000;
         }
-        .video-container iframe {
+        .video-container video { /* Updated from iframe to video */
             position: absolute;
             top: 0;
             left: 0;
@@ -305,7 +305,7 @@
                     <input type="date" id="date-select" value="2025-11-08">
                 </div>
                 <div class="form-group">
-                    <label> </label>
+                    <label> </label>
                     <button type="submit" class="btn-access">รับสิทธิ์เข้าชม</button>
                 </div>
             </form>
@@ -314,7 +314,8 @@
         <section class="movie-showcase">
             <h2 class="section-title">เร็วๆ นี้ (Coming Soon)</h2>
             <div class="movie-grid">
-                <div class="movie-card" data-video-src="17A421BB.mp4"> 
+                <!-- Changed data-video-src to data-video-playlist and added both video files -->
+                <div class="movie-card" data-video-playlist="17A421BB.mp4, 339CD8E01.mp4"> 
                     <div class="movie-poster">
                          <img src="https://i.postimg.cc/TYWVDYcp/37-26-C6678.png" alt="Colorful Stage Movie Poster">
                         <div class="status-tag coming-soon">Coming Soon</div>
@@ -337,7 +338,8 @@
         <div class="modal-content">
             <span class="close-button">×</span>
             <div class="video-container">
-                <iframe id="video-player" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <!-- Replaced iframe with video tag -->
+                <video id="video-player" controls></video>
             </div>
         </div>
     </div>
@@ -346,28 +348,61 @@
         document.addEventListener('DOMContentLoaded', () => {
             const movieCards = document.querySelectorAll('.movie-card');
             const modal = document.getElementById('video-modal');
+            // This now correctly refers to the <video> element
             const videoPlayer = document.getElementById('video-player');
             const closeButton = document.querySelector('.close-button');
             const body = document.body;
 
-            const openModal = (videoSrc) => {
-                const autoplaySrc = videoSrc.includes('?') ? `${videoSrc}&autoplay=1` : `${videoSrc}?autoplay=1`;
-                videoPlayer.src = autoplaySrc;
-                modal.classList.add('active');
-                body.classList.add('modal-open');
+            // Variables to manage the playlist
+            let currentPlaylist = [];
+            let currentVideoIndex = 0;
+
+            // Function to play the next video in the playlist
+            const playNextVideo = () => {
+                currentVideoIndex++;
+                if (currentVideoIndex < currentPlaylist.length) {
+                    videoPlayer.src = currentPlaylist[currentVideoIndex];
+                    videoPlayer.play();
+                } else {
+                    // If the playlist is finished, close the modal
+                    closeModal();
+                }
             };
 
+            // Updated openModal to handle playlists
+            const openModal = () => {
+                if (currentPlaylist.length > 0) {
+                    currentVideoIndex = 0;
+                    videoPlayer.src = currentPlaylist[currentVideoIndex];
+                    modal.classList.add('active');
+                    body.classList.add('modal-open');
+                    // We call .play() on the video element directly
+                    videoPlayer.play().catch(error => {
+                        console.error("Autoplay was prevented by the browser:", error);
+                        // If autoplay fails, the user can click the play button on the controls.
+                    });
+                }
+            };
+
+            // Updated closeModal to reset the player and playlist
             const closeModal = () => {
                 modal.classList.remove('active');
                 body.classList.remove('modal-open');
+                videoPlayer.pause();
                 videoPlayer.src = '';
+                // Clear the playlist variables
+                currentPlaylist = [];
+                currentVideoIndex = 0;
             };
 
+            // Updated click listener to read the playlist
             movieCards.forEach(card => {
                 card.addEventListener('click', () => {
-                    const videoSrc = card.dataset.videoSrc;
-                    if (videoSrc) {
-                        openModal(videoSrc);
+                    const playlistSrc = card.dataset.videoPlaylist;
+                    if (playlistSrc) {
+                        // Split the string of video sources into an array
+                        currentPlaylist = playlistSrc.split(',').map(src => src.trim());
+                        openModal();
                     }
                 });
             });
@@ -375,14 +410,16 @@
             closeButton.addEventListener('click', closeModal);
 
             modal.addEventListener('click', (event) => {
+                // Close modal if the overlay background is clicked
                 if (event.target === modal) {
                     closeModal();
                 }
             });
+
+            // Add an event listener to the video player that triggers when a video ends
+            videoPlayer.addEventListener('ended', playNextVideo);
         });
     </script>
 
 </body>
 </html>
-
-
