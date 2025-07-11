@@ -23,6 +23,10 @@
             color: var(--text-color);
             background: radial-gradient(circle, var(--secondary-color) 0%, var(--background-color) 100%);
         }
+        
+        body.modal-open {
+            overflow: hidden;
+        }
 
         .container {
             max-width: 1200px;
@@ -138,7 +142,7 @@
         /* --- Movie Grid --- */
         .movie-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
 
@@ -159,12 +163,18 @@
 
         .movie-poster {
             position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
         }
 
         .movie-poster img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
+            object-fit: cover;
         }
 
         .status-tag {
@@ -177,6 +187,7 @@
             font-weight: 700;
             color: #fff;
             text-transform: uppercase;
+            z-index: 1;
         }
         .status-tag.now-showing {
             background-color: var(--primary-color);
@@ -210,6 +221,53 @@
             margin-top: 50px;
             border-top: 1px solid #222;
         }
+
+        /* --- Video Modal Styles --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-overlay.active {
+            display: flex; /* Shown when active */
+        }
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1100px;
+        }
+        .close-button {
+            position: absolute;
+            top: -45px; /* Positioned above the video */
+            right: 0;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .video-container {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -230,9 +288,7 @@
                 <div class="form-group">
                     <label for="movie-select">เลือกภาพยนตร์</label>
                     <select id="movie-select">
-                        <option>Dune: Part Two</option>
-                        <option>Oppenheimer</option>
-                        <option>Godzilla x Kong: The New Empire</option>
+                        <option>Colorful Stage! The Movie: A Miku Who Can't Sing</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -240,66 +296,32 @@
                     <select id="format-select">
                         <option>รับชมออนไลน์ (Streaming)</option>
                         <option>ไพรเวทโฮมเธียเตอร์ (บางกะปิ)</option>
+                        <option>แผ่นหนัง DVD</option>
+                        <option>USB</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="date-select">เลือกวันที่</label>
-                    <input type="date" id="date-select" value="2025-07-12">
+                    <input type="date" id="date-select" value="2025-11-08">
                 </div>
                 <div class="form-group">
-                    <label>&nbsp;</label>
+                    <label> </label>
                     <button type="submit" class="btn-access">รับสิทธิ์เข้าชม</button>
                 </div>
             </form>
         </section>
 
         <section class="movie-showcase">
-            <h2 class="section-title">กำลังฉาย (Now Showing)</h2>
-            <div class="movie-grid">
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="https://placehold.co/400x600/e50914/f5f5f5?text=DUNE\nPART+TWO" alt="Dune Poster">
-                        <div class="status-tag now-showing">Now Showing</div>
-                    </div>
-                    <div class="movie-info">
-                        <h3 class="movie-title">Dune: Part Two</h3>
-                        <p class="movie-details">ไซไฟ / ผจญภัย</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="https://placehold.co/400x600/141414/f5f5f5?text=OPPENHEIMER" alt="Oppenheimer Poster">
-                        <div class="status-tag now-showing">Now Showing</div>
-                    </div>
-                    <div class="movie-info">
-                        <h3 class="movie-title">Oppenheimer</h3>
-                        <p class="movie-details">ชีวประวัติ / ดราม่า</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="movie-showcase">
             <h2 class="section-title">เร็วๆ นี้ (Coming Soon)</h2>
             <div class="movie-grid">
-                <div class="movie-card">
+                <div class="movie-card" data-video-src="17A421BB.mp4"> 
                     <div class="movie-poster">
-                        <img src="https://placehold.co/400x600/808080/000000?text=JOKER\nFOLIE+A+DEUX" alt="Joker 2 Poster">
+                         <img src="https://i.postimg.cc/TYWVDYcp/37-26-C6678.png" alt="Colorful Stage Movie Poster">
                         <div class="status-tag coming-soon">Coming Soon</div>
                     </div>
                     <div class="movie-info">
-                        <h3 class="movie-title">Joker: Folie à Deux</h3>
-                        <p class="movie-details">เพลง / อาชญากรรม / ดราม่า</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <div class="movie-poster">
-                        <img src="https://placehold.co/400x600/808080/000000?text=GLADIATOR+II" alt="Gladiator 2 Poster">
-                        <div class="status-tag coming-soon">Coming Soon</div>
-                    </div>
-                    <div class="movie-info">
-                        <h3 class="movie-title">Gladiator II</h3>
-                        <p class="movie-details">แอ็คชัน / ดราม่า</p>
+                        <h3 class="movie-title">Colorful Stage! The Movie: A Miku Who Can't Sing</h3>
+                        <p class="movie-details">เพลง / อนิเมะ / ดราม่า</p>
                     </div>
                 </div>
             </div>
@@ -308,9 +330,59 @@
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2025 EchoXperience. Your Private Cinema Experience.</p>
+        <p>© 2025 EchoXperience. Your Private Cinema Experience.</p>
     </footer>
+
+    <div id="video-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <div class="video-container">
+                <iframe id="video-player" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const movieCards = document.querySelectorAll('.movie-card');
+            const modal = document.getElementById('video-modal');
+            const videoPlayer = document.getElementById('video-player');
+            const closeButton = document.querySelector('.close-button');
+            const body = document.body;
+
+            const openModal = (videoSrc) => {
+                const autoplaySrc = videoSrc.includes('?') ? `${videoSrc}&autoplay=1` : `${videoSrc}?autoplay=1`;
+                videoPlayer.src = autoplaySrc;
+                modal.classList.add('active');
+                body.classList.add('modal-open');
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+                body.classList.remove('modal-open');
+                videoPlayer.src = '';
+            };
+
+            movieCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const videoSrc = card.dataset.videoSrc;
+                    if (videoSrc) {
+                        openModal(videoSrc);
+                    }
+                });
+            });
+
+            closeButton.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
+
 
